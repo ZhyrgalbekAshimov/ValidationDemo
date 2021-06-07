@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<form action="#" th:action="@{/}" th:object="${personForm}" method="post">
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" th:field="*{name}" /></td>
+            <td class = "error" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</td>
+        </tr>
+        <tr>
+            <td>Age:</td>
+            <td><input type="text" th:field="*{age}" /></td>
+            <td  class = "error" th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Age Error</td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td><input type="text" th:field="*{email}" /></td>
+            <td  class = "error" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email Error</td>
+        </tr>
+        <tr>
+            <td>Experience:</td>
+            <td><input type="text" th:field="*{experience}" /></td>
+            <td  class = "error" th:if="${#fields.hasErrors('experience')}" th:errors="*{experience}">Experience Error</td>
+        </tr>
+        <tr>
+            <td>IP address:</td>
+            <td><input type="text" th:field="*{ipAddress}" /></td>
+            <td  class = "error" th:if="${#fields.hasErrors('ipAddress')}" th:errors="*{ipAddress}">Experience Error</td>
+        </tr>
+        <tr>
+            <td>Carrier Start:</td>
+            <td><input type="text" th:field="*{carierStart}" /></td>
+            <td  class = "error" th:if="${#fields.hasErrors('carierStart')}" th:errors="*{carierStart}">Experience Error</td>
+        </tr>
+        <tr>
+            <td>End Contract:</td>
+            <td><input type="text" th:field="*{endContract}" /></td>
+            <td  class = "error" th:if="${#fields.hasErrors('endContract')}" th:errors="*{endContract}">Experience Error</td>
+        </tr>
+        <tr>
+            <td>Birthday:</td>
+            <td><input type="text" th:field="*{birthday}" /></td>
+            <td  class = "error" th:if="${#fields.hasErrors('birthday')}" th:errors="*{birthday}">Experience Error</td>
+        </tr>
+
+        <tr>
+            <td>Are u robot?</td>
+            <td><input type="checkbox" th:field="*{notrobot}"></td>
+            <td  class = "error" th:if="${#fields.hasErrors('notrobot')}" th:errors="*{notrobot}">notrobot Error</td>
+        </tr>
+
+        <tr>
+
+            <td>Your fav cities(min 2):</td>
+
+        <tr>
+            <td class = "error" th:if="${#fields.hasErrors('arrayList')}" th:errors="*{arrayList}">arrayList Error</td>
+        </tr>
+
+        <td>Bishkek<input type="checkbox" th:field="*{arrayList}" th:value="${arrayList}"></td>
+        <tr>
+        </tr>
+        <td>Almaty<input type="checkbox" th:field="*{arrayList}" th:value="${arrayList}"></td>
+        <tr>
+        </tr>
+        <td>Moscow<input type="checkbox" th:field="*{arrayList}" th:value="${arrayList}"></td>
+        <tr>
+        </tr>
+        <td>London<input type="checkbox" th:field="*{arrayList}"th:value="${arrayList}" ></td>
+
+
+
+
+
+
+        <tr>
+            <td><button type="submit">Submit</button></td>
+        </tr>
+    </table>
+</form>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    input[type=text], select, textarea {
+        font-family:monospace;
+        font-size: 15px;
+        width: 90%;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        resize: vertical;
+
+
+    }
+
+    td.error{
+        color: #f43964;
+    }
+    input[type=submit] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 45px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        float: left;
+        margin-top: 30px;
+
+    }
+
+    input[type=submit]:hover {
+        background-color: #45a049;
+
+    }
+
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+        .col-25, .col-75, input[type=submit] {
+            width: 100%;
+            margin-top: 0;
+        }
+    }
+</style>
+
+
+
+
+</body>
+</html>
